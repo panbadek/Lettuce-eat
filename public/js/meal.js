@@ -1,4 +1,4 @@
-import { h, api, toast, storage, shareBox } from './ui.js';
+import { h, api, toast, storage, shareBox, foodIcon } from './ui.js';
 import { notFound } from './meeting.js';
 import { UNITS, UNIT_KEYS, MAX_AMOUNT, parseAmount, convert, totals, formatAmount } from '../shared/food.js';
 
@@ -8,7 +8,7 @@ const PIZZA_SLICES = 8;
 
 function equivalents(amount, unit) {
   const c = convert(amount, unit);
-  return UNIT_KEYS.map((k) => `${UNITS[k].emoji} ${formatAmount(c[k])}`).join('  ·  ');
+  return UNIT_KEYS.map((k) => h('span', { class: 'eqv' }, foodIcon(k), formatAmount(c[k])));
 }
 
 export async function renderMeal(root, id) {
@@ -49,7 +49,7 @@ export async function renderMeal(root, id) {
     const btn = h(
       'button',
       { type: 'button', class: 'unit', dataset: { unit: key }, 'aria-pressed': 'false' },
-      h('span', { class: 'unit-emoji' }, UNITS[key].emoji),
+      foodIcon(key, { decorative: true, className: 'unit-icon' }),
       h('span', { class: 'unit-label' }, UNITS[key].label),
     );
     btn.addEventListener('click', () => {
@@ -87,7 +87,7 @@ export async function renderMeal(root, id) {
       preview.className = 'preview err-text';
       return;
     }
-    preview.textContent = `= ${equivalents(amount, unit)}`;
+    preview.replaceChildren('=', ...equivalents(amount, unit));
     preview.className = 'preview';
   }
 
@@ -192,7 +192,7 @@ export async function renderMeal(root, id) {
           'tr',
           {},
           h('td', { class: 'strong' }, e.name),
-          h('td', { class: 'declared' }, `${formatAmount(e.amount)} ${UNITS[e.unit].emoji}`),
+          h('td', { class: 'declared' }, h('span', { class: 'eqv' }, formatAmount(e.amount), foodIcon(e.unit))),
           UNIT_KEYS.map((k) => h('td', { class: `num${k === e.unit ? ' own' : ''}` }, formatAmount(c[k]))),
           h('td', { class: 'row-actions' }, edit, del),
         );
@@ -213,7 +213,7 @@ export async function renderMeal(root, id) {
                 {},
                 h('th', {}, 'Imię'),
                 h('th', {}, 'Podał(a)'),
-                UNIT_KEYS.map((k) => h('th', { class: 'num', title: UNITS[k].label }, UNITS[k].emoji)),
+                UNIT_KEYS.map((k) => h('th', { class: 'num' }, foodIcon(k))),
                 h('th', {}, h('span', { class: 'sr-only' }, 'Akcje')),
               ),
             ),
@@ -228,7 +228,7 @@ export async function renderMeal(root, id) {
       h(
         'div',
         { class: 'tile' },
-        h('div', { class: 'tile-emoji' }, UNITS[key].emoji),
+        foodIcon(key, { decorative: true, className: 'tile-icon' }),
         h('div', { class: 'tile-value' }, formatAmount(sum[key])),
         h('div', { class: 'tile-label' }, UNITS[key].label),
         hint ? h('div', { class: 'tile-hint' }, hint) : null,

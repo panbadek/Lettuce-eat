@@ -5,19 +5,19 @@ export const UNITS = {
   toast: {
     label: 'połówki tosta',
     short: 'połówek tosta',
-    emoji: '🥪',
+    icon: '/icons/toast.svg',
     perHotdog: 4,
   },
   hotdog: {
     label: 'małe hot dogi z Żabki',
     short: 'hot dogów',
-    emoji: '🌭',
+    icon: '/icons/hotdog.svg',
     perHotdog: 1,
   },
   pizza: {
     label: 'kawałki średniej pizzy',
     short: 'kawałków pizzy',
-    emoji: '🍕',
+    icon: '/icons/pizza.svg',
     perHotdog: 3,
   },
 };

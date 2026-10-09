@@ -1,3 +1,5 @@
+import { UNITS } from '../shared/food.js';
+
 // Small DOM + network helpers used by every page.
 
 export function h(tag, attrs = {}, ...children) {
@@ -112,6 +114,18 @@ export function shareBox(url, title, { highlight = false } = {}) {
     highlight ? h('p', { class: 'share-title' }, '🎉 Gotowe! Wyślij ten link znajomym:') : h('p', { class: 'share-title' }, 'Link do udostępnienia:'),
     h('div', { class: 'share-row' }, input, h('div', { class: 'share-buttons' }, buttons)),
   );
+}
+
+/** Food unit icon. Pass `decorative` when the unit's name is already written next to it. */
+export function foodIcon(unit, { decorative = false, className = '' } = {}) {
+  return h('img', {
+    src: UNITS[unit].icon,
+    alt: decorative ? '' : UNITS[unit].label,
+    title: decorative ? null : UNITS[unit].label,
+    class: `ficon ${className}`.trim(),
+    width: '24',
+    height: '24',
+  });
 }
 
 const weekdayFmt = new Intl.DateTimeFormat('pl-PL', { weekday: 'short' });

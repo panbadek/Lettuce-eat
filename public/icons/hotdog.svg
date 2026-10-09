@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="mały hot dog z Żabki">
+  <!-- Żabka-style (French) hot dog: closed long bun, sausage poking out of one end, green paper sleeve. -->
+  <g transform="rotate(-28 32 32) translate(32 32) scale(0.84) translate(-32 -32)">
+    <!-- sausage sticking out of the bun -->
+    <rect x="40" y="24.5" width="22" height="15" rx="7.5" fill="#C9472C"/>
+    <rect x="49" y="27" width="10" height="3" rx="1.5" fill="#E9785C"/>
+    <!-- bun -->
+    <rect x="2" y="18" width="48" height="28" rx="14" fill="#E3A04C"/>
+    <rect x="9" y="21.5" width="34" height="6" rx="3" fill="#F4C67E"/>
+    <!-- ketchup at the opening -->
+    <path d="M45.5 26 q3.5 0 3.5 6 q0 6 -3.5 6" fill="none" stroke="#D8261C" stroke-width="3" stroke-linecap="round"/>
+    <!-- paper sleeve -->
+    <path d="M0 15 L19 15 L17 20 L19 25 L17 30 L19 35 L17 40 L19 49 L0 49 Z" fill="#169443"/>
+    <rect x="0" y="29" width="18" height="6" fill="#FFFFFF"/>
+  </g>
+</svg>

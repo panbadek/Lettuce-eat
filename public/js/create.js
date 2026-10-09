@@ -1,8 +1,7 @@
-import { h, api, toast } from './ui.js';
+import { h, api, toast, foodIcon } from './ui.js';
 import { createCalendar } from './calendar.js';
 import { createPaintGrid } from './grid.js';
 import { timesBetween, minutesToTime, makeSlot, slotDate, slotTime } from '../shared/slots.js';
-import { UNITS } from '../shared/food.js';
 
 const TIME_OPTIONS = Array.from({ length: 49 }, (_, i) => minutesToTime(i * 30)); // 00:00 … 24:00
 
@@ -166,11 +165,11 @@ export function renderCreateMeal() {
       h(
         'div',
         { class: 'rate' },
-        h('span', {}, `${UNITS.hotdog.emoji} 1 hot dog`),
+        h('span', { class: 'eqv' }, foodIcon('hotdog', { decorative: true }), '1 hot dog'),
         h('span', { class: 'eq' }, '='),
-        h('span', {}, `${UNITS.toast.emoji} 4 połówki tosta`),
+        h('span', { class: 'eqv' }, foodIcon('toast', { decorative: true }), '4 połówki tosta'),
         h('span', { class: 'eq' }, '='),
-        h('span', {}, `${UNITS.pizza.emoji} 3 kawałki pizzy`),
+        h('span', { class: 'eqv' }, foodIcon('pizza', { decorative: true }), '3 kawałki pizzy'),
       ),
     ),
     submit,

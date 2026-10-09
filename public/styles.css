@@ -704,9 +704,25 @@ label.inline {
   border-color: var(--accent);
   background: var(--accent-soft);
 }
-.unit-emoji {
-  font-size: 1.8rem;
-  line-height: 1;
+.ficon {
+  width: 1.4em;
+  height: 1.4em;
+  vertical-align: middle;
+  flex: none;
+}
+.eqv {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+}
+.rate .eqv,
+.declared .eqv {
+  margin-left: 0;
+}
+.unit-icon {
+  width: 2.6rem;
+  height: 2.6rem;
 }
 .unit-label {
   font-size: 0.8rem;
@@ -717,6 +733,9 @@ label.inline {
   max-width: 10rem;
 }
 .preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   font-weight: 600;
   margin: 0;
   min-height: 1.5em;
@@ -745,8 +764,9 @@ table.entries {
   color: var(--muted);
   font-weight: 600;
 }
-.entries th.num {
-  font-size: 1.15rem;
+.entries th.num .ficon {
+  width: 1.7rem;
+  height: 1.7rem;
 }
 .entries .num {
   text-align: right;
@@ -781,9 +801,11 @@ table.entries {
   text-align: center;
   min-width: 0;
 }
-.tile-emoji {
-  font-size: 1.8rem;
-  line-height: 1;
+.tile-icon {
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  margin: 0 auto;
 }
 .tile-value {
   font-size: clamp(1.6rem, 6vw, 2.4rem);
@@ -813,9 +835,11 @@ table.entries {
     padding: 0.6rem 0.8rem;
     column-gap: 0.6rem;
   }
-  .tile-emoji {
+  .tile-icon {
     grid-area: e;
     align-self: center;
+    width: 2.5rem;
+    height: 2.5rem;
   }
   .tile-value {
     grid-area: v;
