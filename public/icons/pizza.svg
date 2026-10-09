@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="kawałek pizzy">
+  <!-- slice: tip at the bottom, crust on top -->
+  <path d="M8 14 Q32 4 56 14 L32 60 Z" fill="#FFCD4A"/>
+  <path d="M8 14 Q32 4 56 14" fill="none" stroke="#C47F35" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="24" cy="23" r="4.2" fill="#C8402D"/>
+  <circle cx="39" cy="22" r="4.2" fill="#C8402D"/>
+  <circle cx="32" cy="37" r="4" fill="#C8402D"/>
+  <circle cx="35" cy="48" r="2.6" fill="#C8402D"/>
+  <circle cx="30" cy="28" r="1.4" fill="#3E8E3A"/>
+  <circle cx="42" cy="31" r="1.4" fill="#3E8E3A"/>
+  <circle cx="27" cy="42" r="1.4" fill="#3E8E3A"/>
+</svg>

@@ -1,0 +1,20 @@
+{
+  "name": "lettuce-eat",
+  "version": "1.0.0",
+  "description": "Planowanie spotkań (jak Lettuce Meet) i zbieranie zamówień na posiłek – tosty, hot dogi z Żabki i pizza.",
+  "type": "module",
+  "main": "src/server.js",
+  "private": true,
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning src/server.js",
+    "dev": "node --no-warnings=ExperimentalWarning --watch src/server.js",
+    "test": "node --no-warnings=ExperimentalWarning --test \"test/**/*.test.js\""
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.3"
+  }
+}
